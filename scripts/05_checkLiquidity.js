@@ -1,5 +1,7 @@
 // pool
-USDT_USDC_500= '0x46927faBF9630903ff66F731988DCc4C5d34c098'
+USDT_USDC_500= '0x1FA8DDa81477A5b6FA1b2e149e93ed9C7928992F'
+
+USDT_USDC_3000= '0x177f4e9Ab346466a07274c8fa3ddc0B9BD8E976F'
 
 const UniswapV3Pool = require("@uniswap/v3-core/artifacts/contracts/UniswapV3Pool.sol/UniswapV3Pool.json")
 const { Contract } = require("ethers")
