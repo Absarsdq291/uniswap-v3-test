@@ -103,6 +103,15 @@ async function main() {
     { gasLimit: '1000000' }
   )
   const receipt = await tx.wait()
+  const eventInterface = new ethers.utils.Interface(artifacts.NonfungiblePositionManager.abi);
+  const eventLog = receipt.logs.find(log => log.topics[0] === eventInterface.getEventTopic('IncreaseLiquidity'));
+  if (eventLog) {
+    const eventData = eventInterface.parseLog(eventLog);
+    const tokenId = eventData.args.tokenId.toNumber();
+    console.log('Minted tokenId:', tokenId);
+  } else {
+    console.error('Event log not found');
+    }
 }
 
 /*
